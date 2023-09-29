@@ -19,21 +19,20 @@ namespace Laboratorio_6
             Console.ReadKey();
             Console.Clear();
 
-            int AsisActuales = 0;
+                        int Asisactuales = 0;
             int TIngresos = 0;
             int TSalidas = 0;
-            int vecesLle = 0;
-            int vecesVa = 0;
+            int veceslle = 0;
+            int vecesva = 0;
 
             char opcion; 
 
             do 
             {
-                
                 Console.Clear();
-                Console.WriteLine("| Asistentes actuales | " + AsisActuales);
-                Console.WriteLine("| Aforo               | " + (AsisActuales * 100 / maxPersonas) + "%");
-                Console.WriteLine("| Maximo              | " + maxPersonas + " personas");
+                Console.WriteLine("| Asistentes actuales | " + Asisactuales);
+                Console.WriteLine("| Aforo               | " + (Asisactuales * 100 / maxpersonas) + "%");
+                Console.WriteLine("| Maximo              | " + maxpersonas + " personas");
                 Console.WriteLine("===========================");
                 Console.WriteLine("[ i ] si ingresa una persona");
                 Console.WriteLine("[ s ] si sale una persona");
@@ -45,9 +44,9 @@ namespace Laboratorio_6
                 {
                     case 'i':
 
-                        if (AsisActuales < maxPersonas)
+                        if (Asisactuales < maxpersonas)
                         {
-                            AsisActuales++;
+                            Asisactuales++;
                             TIngresos++;
                         }
                         else
@@ -60,9 +59,9 @@ namespace Laboratorio_6
 
                     case 's':
 
-                        if (AsisActuales > 0)
+                        if (Asisactuales > 0)
                         {
-                            AsisActuales--;
+                            Asisactuales--;
                             TSalidas++;
                         }
                         else
@@ -74,14 +73,14 @@ namespace Laboratorio_6
                         break;
                 }
               
-                if (AsisActuales == maxPersonas)
+                if (Asisactuales == maxpersonas)
                 {
-                    vecesLle++;
+                    veceslle++;
                 }
 
-                if (AsisActuales == 0)
+                if (Asisactuales == 0)
                 {
-                    vecesVa++;
+                    vecesva++;
                 }
 
             } while (opcion != 'x');
@@ -94,8 +93,8 @@ namespace Laboratorio_6
             Console.WriteLine("-------------------------------");
             Console.WriteLine(TIngresos+ " personas ingresaron");
             Console.WriteLine(TSalidas + " personas salieron");
-            Console.WriteLine(vecesLle + " veces se llenó el local");
-            Console.WriteLine("Estuvo vacío " + vecesVa + " veces");
+            Console.WriteLine(veceslle + " veces se llenó el local");
+            Console.WriteLine("Estuvo vacío " + vecesva + " veces");
             Console.ReadKey();
         }
     }
